@@ -48,11 +48,10 @@
         };
       };
 
-      apps = {
-        regen = rubyBuild.mkRubyRegenApp {
-          srcDir = self;
-          name = "abstract-synthesizer";
-        };
+      apps = rubyBuild.mkRubyGemApps {
+        srcDir = self;
+        name = "abstract-synthesizer";
+        inherit ruby;
       };
     });
 }
